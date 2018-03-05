@@ -1,0 +1,6 @@
+[submodule "engine/contrib/protobuf"]
+	path = engine/contrib/protobuf
+	url = https://github.com/google/protobuf
+[submodule "engine/contrib/googletest"]
+	path = engine/contrib/googletest
+	url = https://github.com/google/googletest
