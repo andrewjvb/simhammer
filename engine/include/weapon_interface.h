@@ -1,18 +1,18 @@
 #include <memory>
 #include <vector>
+#include "constants.h"
 
 // TODO av include modifier class
 class modifier_interface;
 
 namespace simhammer
 {
-
     class weapon_interface
     {
     public:
         using modifier_ptr = std::unique_ptr<modifier_interface>;
         using modifier_vector = std::vector<modifier_ptr>;
-        using weapon_stats = std::vector<int>;
+        using weapon_stats = stats_map;
         /*
          * \brief return modified weapon obj
          * \param mod a single modifier to apply
