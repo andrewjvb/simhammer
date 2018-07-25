@@ -1,1 +1,5 @@
 engine/.vscode/*
+*.vcxproj
+*.filters
+*.cmake
+*.sln
