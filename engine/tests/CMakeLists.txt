@@ -1,4 +1,4 @@
-cmake_minimum_version(VERSION 3.9)
+cmake_minimum_required(VERSION 3.11)
 
 # get the google test framework
 find_package(GTEST REQUIRED)
