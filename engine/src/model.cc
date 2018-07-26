@@ -1,35 +1,24 @@
 #include "model.h"
 
-namespace model
+namespace simhammer
 {
-class Model {
-  public:
-    Model(int statline[]);
- 
-    int movement;
-    int weapon_skill;
-    int ballistic_skill;
-    int strength;
-    int toughness;
-    int wounds;
-    int num_attacks;
-    int leadership;
-    int armor_save;
-    int points;
+Model::Model(stats_map statline) : statline_(statline) {
+  // NOTHING!
 };
 
-Model::Model(int statline[]) {
-  movement        = statline[MOVEMENT];
-  weapon_skill    = statline[WEAPON_SKILL];
-  ballistic_skill = statline[BALLISTIC_SKILL];
-  strength        = statline[STRENGTH];
-  toughness       = statline[TOUGHNESS];
-  wounds          = statline[WOUNDS];
-  num_attacks     = statline[NUM_ATTACKS];
-  leadership      = statline[LEADERSHIP];
-  armor_save      = statline[ARMOR_SAVE];
-  points          = statline[POINTS];
+void Model::setValue(stat_key key, int val) {
+  try {
+    statline_[key] = val;
+  }
+  catch(const std::exception& e) {
+    // TODO: some logging
+    // maybe throw
+    std::cout << "Something went wrong:" << e.what() << std::endl;
+  }
 }
+
+int Model::getValue(stat_key key) {
+  return statline_[key];  
 }
 
 using namespace model;
