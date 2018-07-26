@@ -1,0 +1,16 @@
+namespace model {
+enum ModelStatline {
+  MOVEMENT,
+  WEAPON_SKILL,
+  BALLISTIC_SKILL,
+  STRENGTH,
+  TOUGHNESS,
+  WOUNDS,
+  NUM_ATTACKS,
+  LEADERSHIP,
+  ARMOR_SAVE,
+  POINTS,
+ 
+  NUM_UNIT_STATS
+};
+}
