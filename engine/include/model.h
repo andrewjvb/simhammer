@@ -15,6 +15,6 @@ class Model {
   private:
     stats_map statline_;
     ranged_weapon_map ranged_weapon_;
-    weapon_ptr wep_;
+    std::vector<weapon_ptr> wep_;
 };
 }

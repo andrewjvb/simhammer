@@ -20,8 +20,9 @@ void Model::setValue(stat_key key, int val) {
 int Model::getValue(stat_key key) {
   return statline_[key];  
 }
+}
 
-using namespace model;
+using namespace simhammer;
 int main()
 {
   int necronWarrior[NUM_UNIT_STATS] = {5, 3, 3, 4, 4, 1, 1, 10, 4, 12};

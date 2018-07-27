@@ -109,6 +109,10 @@ namespace simhammer
 //        use default statline
 //
 //
+// Function in API
+//
+//   create_model
+//   create_weapon
 //
 //
 }
