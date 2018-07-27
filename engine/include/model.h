@@ -1,20 +1,38 @@
 #include "constants.h"
+#include "weapon.h"
 
-namespace simhammer
-{
+namespace simhammer {
+    typedef struct {
+      int movement;
+      int weapon_skill;
+      int ballistic_skill;
+      int strength;
+      int toughness;
+      int wounds;
+      int attacks;
+      int leadership;
+      int armor_save;
+      int points;
+    } datasheet_t;
 
-class Model {
-  public:
-    explicit Model(stats_map statline);
-    ~Model() = default;
+    class Model {
+    public:
+        explicit Model(datasheet_t *datasheet);
+        ~Model() = default;
 
-    void setValue(stat_key key, int val);
-    int getValue(stat_key key);
-    weapon_ptr addWeapon(stats_map statline) { wep_(statline); }
+	/* Model functions */
+        void setValue(stat_key key, int val) { statline_[key] = val; }
+        int getValue(stat_key key) { return statline_[key]; }
 
-  private:
-    stats_map statline_;
-    ranged_weapon_map ranged_weapon_;
-    std::vector<weapon_ptr> wep_;
+	/* Weapon functions */
+	void addWeapon(Weapon* wep) { wep_.push_back(wep); }
+	std::vector<Weapon*> getWeapons(void) { return wep_; }
+
+	/* Modifier functions */
+	// TODO: void addModifier(Modifier mod);
+
+    private:
+      stats_map statline_;
+      std::vector<Weapon*> wep_;
 };
 }
