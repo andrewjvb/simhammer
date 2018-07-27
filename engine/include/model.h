@@ -25,14 +25,15 @@ namespace simhammer {
         int getValue(stat_key key) { return statline_[key]; }
 
 	/* Weapon functions */
-	void addWeapon(Weapon* wep) { wep_.push_back(wep); }
-	std::vector<Weapon*> getWeapons(void) { return wep_; }
+	int addWeapon(Weapon wep) { wep_.push_back(wep), return (wep_.size() - 1) }
+	void removeWeapon(int position) { wep_.erase(position); }
+	std::vector<Weapon> getWeapons(void) { return wep_; }
 
 	/* Modifier functions */
 	// TODO: void addModifier(Modifier mod);
 
     private:
       stats_map statline_;
-      std::vector<Weapon*> wep_;
+      std::vector<Weapon> wep_;
 };
 }
